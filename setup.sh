@@ -55,8 +55,8 @@ sudo apt-get install debconf-utils -y > /dev/null
 
 # MySQL
 echo "Installing MySQL..."
-debconf-set-selections <<< "mysql-server mysql-server/root_password password wakkawakkadumbledore!"
-debconf-set-selections <<< "mysql-server mysql-server/root_password_again password wakkawakkadumbledore!"
+debconf-set-selections <<< "mysql-server mysql-server/root_password password $1"
+debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $1"
 sudo apt-get install mysql-server -y > /dev/null
 
 # php7.0

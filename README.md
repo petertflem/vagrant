@@ -1,0 +1,1 @@
+mysqlpassword=thisismypassword vagrant up

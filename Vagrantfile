@@ -17,6 +17,8 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder 'vagrant-provision', '/etc/vagrant-provision', create: true
 
   # Provisioning
-  config.vm.provision "shell", path: "setup.sh"
+  config.vm.provision "shell", path: "setup.sh" do |s|
+    s.args = ENV['mysqlpassword']
+  end
 
 end
