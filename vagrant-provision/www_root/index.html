@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Instructions</title>
+  </head>
+  <body>
+    <style>
+      .code {
+        background-color: #ddd;
+        font-family: "Courier New";
+        font-size: 13px;
+        padding: 0 2px;
+      }
+    </style>
+
+    <h1>Welcome!</h2>
+    <p>
+      HTTPS: 443
+      <br />
+      HTTPS via Varnish: 8888
+      <br />
+      HTTP: 80, 8080
+      <br />
+      VARNISH: 6081
+      <br />
+    </p>
+    <p>
+      IP address: {{ip_address}}
+      <br />
+      <br />
+      You can add the ip address to your host file for nicer access to the vm!
+      <br />
+      Note that the ip address is given by a dhcp server, so it might change.
+      <br />
+      If it changes, <span class="code">vagrant ssh</span> into the machine and use e.g. <span class="code">ifconfig</span> to find
+      </br />
+      the address of the eth1 card.
+    </p>
+    <p>
+      Click <a href="/phpinfo.php">here</a> to test php on the server.
+    </p>
+  </body>
+</html>
