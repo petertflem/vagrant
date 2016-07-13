@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -x
+
 # Updating package registry
 echo "Updating apt-get package registry..."
 sudo apt-get update > /dev/null
@@ -73,7 +76,7 @@ echo "Generating self signed ssl certificate..."
 sudo mkdir /etc/nginx/ssl
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt -subj "/C=NO/ST=./L=./O=./OU=./CN=." > /dev/null
 
-# Copy server config files into the sites-available/ directory
+# Copy server config files into the config directory
 echo "Configuring Nginx..."
 sudo cp /etc/vagrant-provision/config/* /etc/nginx/conf.d/ -R
 sudo rm /etc/nginx/conf.d/default.conf
@@ -113,6 +116,11 @@ xdebug.remote_handler = "dbgp"
 xdebug.remote_mode = req
 EOT'
 sudo service php7.0-fpm restart
+
+# Set up utility scripts
+sudo mkdir /home/bin
+sudo cp /etc/vagrant-provision/scripts/* /home/bin
+echo 'export PATH=$PATH:/home/bin' >> /home/vagrant/.bashrc
 
 # Print the ip address of the machine
 echo "#############################################"
