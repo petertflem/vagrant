@@ -1,7 +1,7 @@
 #!/bin/bash
 
-set -e
-set -x
+set -e # Exit the script on the first error
+set -x # Print the commands before they are run
 
 # Updating package registry
 echo "Updating apt-get package registry..."
@@ -118,6 +118,7 @@ EOT'
 sudo service php7.0-fpm restart
 
 # Set up utility scripts
+echo "Setting up utility scripts..."
 sudo mkdir /home/bin
 sudo cp /etc/vagrant-provision/scripts/* /home/bin
 echo 'export PATH=$PATH:/home/bin' >> /home/vagrant/.bashrc
