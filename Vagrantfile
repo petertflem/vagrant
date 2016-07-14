@@ -16,6 +16,11 @@ Vagrant.configure(2) do |config|
   # to other destinations on the virutal machine
   config.vm.synced_folder 'vagrant-provision', '/etc/vagrant-provision', create: true
 
+  # Enable symlinks on shared folders
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+  end
+
   # Provisioning
   config.vm.provision "shell", path: "setup.sh" do |s|
     s.args = ENV['mysqlpassword']
