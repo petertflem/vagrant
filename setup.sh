@@ -117,9 +117,9 @@ xdebug.remote_mode = req
 EOT'
 sudo service php7.0-fpm restart
 
-# Node.js v6+
+# Node.js v4
 echo  "Installing Node.js..."
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs > /dev/null
 
 # Installing gulp globally
