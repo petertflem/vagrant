@@ -16,9 +16,12 @@ Vagrant.configure(2) do |config|
   # to other destinations on the virutal machine
   config.vm.synced_folder 'vagrant-provision', '/etc/vagrant-provision', create: true
 
-  # Enable symlinks on shared folders
   config.vm.provider "virtualbox" do |v|
-    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+    v.name = "dev" # VM name
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/var_www","1"] # Enable symlinks on shared folders, not sure if this is needed
+    v.customize ["modifyvm", :id, "--ioapic", "on"] # Required for having more than 1 CPU
+    v.memory = 2048
+    v.cpus = "3"
   end
 
   # Provisioning

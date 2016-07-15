@@ -119,18 +119,42 @@ sudo service php7.0-fpm restart
 
 # Node.js v4
 echo  "Installing Node.js..."
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs > /dev/null
+
+# htop
+echo "Installing htop..."
+sudo apt-get install htop > /dev/null
 
 # Installing gulp globally
 echo "Installing gulp globally..."
 sudo npm install gulp -g > /dev/null
 
+# node-gyp
+echo "Installing node-gyp..."
+sudo npm install -g node-gyp # Does it need to be global?
+
+# Create dir for stuff I need in my PATH
+sudo mkdir /home/bin
+
 # Set up utility scripts
 echo "Setting up utility scripts..."
-sudo mkdir /home/bin
 sudo cp /etc/vagrant-provision/scripts/* /home/bin
 echo 'export PATH=$PATH:/home/bin' >> /home/vagrant/.bashrc
+
+# Install WP CLI
+echo "Installing WP CLI"
+cd /home/bin
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+sudo chmod +x wp-cli.phar
+
+# Install a later version of gcc/g++
+#echo "Installing gcc/g++..."
+#sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+#sudo apt-get update
+#sudo apt-get install gcc-4.8 g++-4.8 -y > /dev/null
+#sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
+#sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.7
 
 # Print the ip address of the machine
 echo "#############################################"
