@@ -156,6 +156,9 @@ sudo chmod +x wp-cli.phar
 #sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
 #sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.7
 
+# Install php gd for wordpress image resizing
+sudo apt-get install php7.0-gd -y > /dev/null # Still needs enabling in php.ini
+
 # Print the ip address of the machine
 echo "#############################################"
 echo "The installation is finished."
