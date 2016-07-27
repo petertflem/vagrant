@@ -112,8 +112,7 @@ zend_extension = /usr/lib/php/20151012/xdebug.so
 xdebug.remote_enable = 1
 xdebug.remote_host = "10.0.2.2"
 xdebug.remote_port = 9000
-xdebug.remote_handler = "dbgp"
-xdebug.remote_mode = req
+xdebug.remote_autostart = 1
 EOT'
 sudo service php7.0-fpm restart
 
@@ -147,6 +146,11 @@ echo "Installing WP CLI"
 cd /home/bin
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 sudo chmod +x wp-cli.phar
+sudo mv phpunit.phar wp
+
+sudo wget https://phar.phpunit.de/phpunit.phar
+sudo chmod +x phpunit.phar
+sudo mv phpunit.phar bin/phpunit
 
 # Install a later version of gcc/g++
 #echo "Installing gcc/g++..."
