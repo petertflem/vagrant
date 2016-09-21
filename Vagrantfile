@@ -6,6 +6,9 @@ Vagrant.configure(2) do |config|
   # Network
   config.vm.network "private_network", type: "dhcp"
 
+  # For mailcatcher
+  # config.vm.network "forwarded_port", guest: 1080, host: 1080
+
   # Disable default sync folder
   config.vm.synced_folder '.', '/vagrant', disabled: true
 
@@ -26,7 +29,7 @@ Vagrant.configure(2) do |config|
 
   # Provisioning
   config.vm.provision "shell", path: "setup.sh" do |s|
-    s.args = ENV['mysqlpassword']
+    s.args = ENV['mysqlpassword'] # e.g: mysqlpassword=mypassword vagrant up
   end
 
 end

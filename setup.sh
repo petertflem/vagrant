@@ -90,7 +90,7 @@ sudo cp /etc/vagrant-provision/www_root/* /var/www/ -R
 # Get the appointed ip address of eth1
 ip_address=$(ifconfig eth1 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 
-# Put the ip address into the welcome html.index file
+# Put the ip address into the welcome index.html file
 sed -i "s/{{ip_address}}/$ip_address/g" /var/www/index.html
 
 # Set up xdebug - following the steps from here: https://xdebug.org/wizard.php
@@ -147,18 +147,6 @@ cd /home/bin
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 sudo chmod +x wp-cli.phar
 sudo mv phpunit.phar wp
-
-sudo wget https://phar.phpunit.de/phpunit.phar
-sudo chmod +x phpunit.phar
-sudo mv phpunit.phar bin/phpunit
-
-# Install a later version of gcc/g++
-#echo "Installing gcc/g++..."
-#sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-#sudo apt-get update
-#sudo apt-get install gcc-4.8 g++-4.8 -y > /dev/null
-#sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
-#sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.7
 
 # Install php gd for wordpress image resizing
 sudo apt-get install php7.0-gd -y > /dev/null # Still needs enabling in php.ini
