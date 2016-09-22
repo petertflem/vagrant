@@ -117,9 +117,16 @@ EOT'
 sudo service php7.0-fpm restart
 
 # Node.js v4
-echo  "Installing Node.js v4..."
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodejs > /dev/null
+# echo  "Installing Node.js v4..."
+# curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+# sudo apt-get install -y nodejs > /dev/null
+
+# NVM and nodejs
+sudo wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+sudo . ~/.bashrc # Reload the .bashrc file
+sudo nvm install 4.5.0
+sudo nvm install 6.6.0
+
 
 # htop
 echo "Installing htop..."
@@ -131,7 +138,7 @@ sudo npm install gulp -g > /dev/null
 
 # node-gyp
 echo "Installing node-gyp..."
-sudo npm install -g node-gyp # Does it need to be global?
+sudo npm install -g node-gyp
 
 # Create dir for stuff I need in my PATH
 sudo mkdir /home/bin
