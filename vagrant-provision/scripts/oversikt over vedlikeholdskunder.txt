@@ -1,0 +1,33 @@
+4.7.2 - Loomis Norge AS
+3.8.5 - Loomis International (Har vi denne nettsiden?)
+4.7.2 - Aggreko Norge
+4.7.2 - Aggreko Sverige
+4.6.3 - Dekkpartner Kjedehuset AS 			| /var/www/dekkpartner/www/
+4.7.2 - Forbrukerombudet 								| /home/metronet/www/forbrukerombudet.no
+4.7.2 - Gardermoen Parkering AS 				| /home/neolab/www/gardermoenparkering.no
+4.7.2 - Høyskolen Kristiania						| /var/www/kristiania.no/
+4.7.2 - Kunnskapsdepartementet (Unesco)	| /home/neolab/www/unesco.no
+
+Multiconsult AS
+	multiconsult-ir.com: 				4.7.2 | /home/metronet/www/multiconsult-ir.com/
+	multiconsult.no:						4.7.2	| /home/metronet/www/default/
+	multiconsultgroup.com:			4.7.2 | /home/metronet/www/multiconsultgroup.com/
+	kriseweb.dev.metrohost.no:	4.7.2 | /var/www/kriseweb/	
+	
+Odin Forvaltning AS
+	odinfond.no: 				4.7.2
+	odinfonder.se:			4.7.2
+	odin.fi:						4.7.2
+	blogg.odinfond.no:	4.7.2
+	odinfundmanagment:	4.7.2
+
+4.7.2 - Son spa 							| /home/neolab/www/sonspa.no
+4.7.2 - Strømstad spa 				| /www/stromstadspa.se/
+-.-.- - Unneland (Har vi denne nettsiden?)
+4.4.2 - Venstre 							| /home/neolab/www/default
+4.3.1 - Wavetrain 						| /home/neolab/www/wavetrain.no
+4.7.2 - Communicate Norge AS	| /home/kxo/www/communicate/
+4.7.2 - Fondsfinans						| /home/neolab/www/fond.fondsfinans.no/
+4.7.2 - Unibuss Tur AS				| /var/www/unibusstur/www/
+4.5.6 - Partner Revisjon DA		| /usr/share/nginx/revisjon
+4.6.3 - Orkidéekspressen			| /home/kxo/www/orkideweb/
